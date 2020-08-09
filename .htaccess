@@ -1,0 +1,25 @@
+RewriteEngine On
+
+
+RewriteRule "^([a-zA-Z0-9]+)$" "index.php?action=$1"
+RewriteRule "^chitietsanpham/([0-9]+)/([a-zA-Z0-9-.]+)$" "index.php?action=chitietsanpham&id=$1&tensp=$2"
+RewriteRule "^sanpham/([0-9]+)$" "index.php?action=sanpham&trang=$1"
+RewriteRule "^hang/([a-zA-Z0-9]+)/([0-9]+)$" "index.php?action=hang&hang=$1&trang=$2"
+RewriteRule "^quanlitaikhoan/([a-zA-Z0-9]+)$" "index.php?action=quanlitaikhoan&func=$1"
+RewriteRule "^chitietsanpham/([0-9]+)/([a-zA-Z0-9-.]+)/([0-9]+)$" "index.php?action=chitietsanpham&id=$1&tensp=$2&addcart=$3"
+RewriteRule "^thanhtoan/([a-zA-Z0-9]+)$" "index.php?action=payment&by=$1"
+RewriteRule "^donhang/([0-9]+)$" "index.php?action=listorder&trang=$1"
+RewriteRule "^admin/([a-zA-Z0-9]+)$" "index.php?admin=admin&action=$1"
+
+
+RewriteRule "^admin/listproduct/edit/([0-9]+)$" "index.php?admin=admin&action=listproduct&edit=$1"
+RewriteRule "^admin/listproduct/delete/([0-9]+)$" "index.php?admin=admin&action=listproduct&delete=$1"
+RewriteRule "^admin/listbill/edit/([0-9]+)$" "index.php?admin=admin&action=bill&idbill=$1"
+RewriteRule "^admin/" "index.php?admin"
+
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+ErrorDocument 500 /403.php
+
+
+
